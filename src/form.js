@@ -29,10 +29,11 @@ const Forms = () => {
          email: '',
        }}
        validationSchema={SignupSchema}
-       onSubmit={values => {
+       onSubmit={(values, actions) => {
          // same shape as initial values
          console.log(values);
          NotificationManager.success('form submitted', 'success', 4000);
+         actions.resetForm()
         }}
      >
        {({ errors, touched }) => (
